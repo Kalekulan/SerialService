@@ -12,7 +12,7 @@
 
 SCRIPT="/usr/local/sbin/server.py &"
 RUNAS=root
-NAME=server
+NAME=serialService
 
 PIDFILE=/var/run/$NAME.pid
 LOGFILE=/var/log/$NAME.log
