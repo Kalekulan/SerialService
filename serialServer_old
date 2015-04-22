@@ -1,0 +1,44 @@
+#! /bin/sh
+# /etc/init.d/serialServer
+
+
+### BEGIN INIT INFO
+# Provides:          <NAME>
+# Required-Start:    $local_fs $network $named $time $syslog
+# Required-Stop:     $local_fs $network $named $time $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Description:       <DESCRIPTION>
+### END INIT INFO
+
+
+ 
+case "$1" in
+  start)
+    echo "Starting serialServer"
+    # run application you want to start
+    /usr/local/sbin/server.py &
+    #./server.py &
+    #python /home/www/server.py & 
+   ;;
+  stop)
+    echo "Stopping serialServer"
+    # kill application you want to stop
+    # killall python
+    killall server.py
+    ;;
+  restart)
+    echo "Restarting serialServer"
+    killall server.py
+    # starts server
+    # sudo python /usr/local/sbin/server.py &
+    #./server.py &
+    /usr/local/sbin/server.py &
+    ;;
+  *)
+    echo "Usage: /etc/init.d/serialServer {start|stop|restart}"
+    exit 1
+    ;;
+esac
+ 
+exit 0
