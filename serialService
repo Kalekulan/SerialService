@@ -1,5 +1,5 @@
 #!/bin/sh
-# /etc/init.d/serialServer
+# /etc/init.d/serialService
 
 ### BEGIN INIT INFO
 # Provides:          <NAME>
